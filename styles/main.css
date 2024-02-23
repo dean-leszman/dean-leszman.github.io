@@ -1,1 +1,45 @@
 @import './normalize.css';
+
+:root {
+    --dark: #111111;
+    --light: #EEEEEE;
+    --hover: orangered;
+}
+main {
+    align-items: center;
+    background-color: #111;
+    color: #EEE;
+    font-family: "Kode Mono";
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 100vw;
+}
+
+.links {
+    align-items: center;
+    display: flex;
+    font-size: 2em;
+    gap: 0.8em;
+
+    button {
+        background-color: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0em;
+    }
+
+    a,
+    button {
+        color:#EEE;
+        text-decoration: none;
+
+        :hover {
+            color: var(--hover);
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+    }
+}
