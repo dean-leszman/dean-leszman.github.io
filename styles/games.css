@@ -1,0 +1,88 @@
+/* Base Styles */
+:root {
+    --main-bg-color: orangered;
+    --main-bg-color-text: white;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Game Styles */
+
+#games {
+    padding: 1em;
+}
+
+.Game {
+    /* border: 1px solid var(--main-bg-color); */
+    display: flex;
+    width: fit-content;
+
+    + .Game {
+        margin-top: 0.2em;
+    }
+}
+
+.Game__header {
+    align-items: center;
+    background-color: var(--main-bg-color);
+    border-radius: 3px;
+    color: var(--main-bg-color-text);
+    display: flex;
+    font-size: 1.2em;
+    min-width: 500px;
+    justify-content: space-between;
+}
+
+.Game__name {
+    border: 1px solid var(--main-bg-color);
+    border-radius: 3px 0px 0px 3px;
+    padding: 0.4em 0.8em;
+}
+
+.Game__rating {
+    align-items: center;
+    background-color: var(--dark);
+    border: 1px solid var(--main-bg-color);
+    border-radius: 3px;
+    color: var(--main-bg-color);
+    display: flex;
+    font-size: 2em;
+    justify-content: center;
+    padding: 0em 0.4em;
+}
+
+.Game__tags {
+    align-items: center;
+    display: flex;
+    gap: 0.4em;
+    padding: 0.4em 0.8em;
+
+    li {
+        background-color: #333;
+        border: 1px solid #333;
+        border-radius: 3px;
+        list-style-type: none;
+        padding: 0.4em 0.8em;
+        text-align: center;
+        width: 150px;
+    }
+
+    .Tag--coop {
+        background-color: mediumslateblue;
+        color: white;
+    }
+    
+    .Tag--free {
+        background-color: mediumspringgreen;
+        color: black;
+    }
+}
+
+
+
+.hide {
+    display: none;
+}

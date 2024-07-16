@@ -4,13 +4,15 @@
     --dark: #111111;
     --light: #EEEEEE;
     --hover: orangered;
-}
 
-main {
-    align-items: center;
+    
     background-color: #111;
     color: #EEE;
     font-family: "Kode Mono";
+}
+
+#index {
+    align-items: center;
     font-size: 1.5em;
     display: flex;
     flex-direction: column;

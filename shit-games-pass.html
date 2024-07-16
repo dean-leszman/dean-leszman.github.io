@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shit Games Pass &trade;</title>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles/main.css" />
+    <link rel="stylesheet" type="text/css" href="./styles/games.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link href="./styles/fontawesome/fontawesome.min.css" rel="stylesheet" />
+    <link href="./styles/fontawesome/brands.min.css" rel="stylesheet" />
+    <link href="./styles/fontawesome/solid.min.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        const data = [{
+            name: "Call of Duty: Black Ops III",
+            rating: 8,
+            tags: [
+                "Single Player", 
+                {
+                    className: "coop",
+                    text: "Online Co-Op"
+                }, 
+                "Zombies"
+            ]
+        }, {
+            name: "Battlebit Remastered",
+            rating: 7,
+            tags: [
+                "Multiplayer", 
+                "FPS"
+            ]
+        }, {
+            name: "Dota 2",
+            rating: 7,
+            tags: [
+                "Multiplayer", 
+                "MOBA",
+                {
+                    className: "free",
+                    text: "Free to Play"
+                }
+            ]
+        }, {
+            name: "Journey to the Savage Planet",
+            rating: 6,
+            tags: [
+                "Single Player",
+                {
+                    className: "coop",
+                    text: "Online Co-Op"
+                }, 
+                "Metroidvania", 
+                "Platformer"
+            ]
+        }, {
+            name: "Tom Clancy's Ghost Recon Wildlands",
+            rating: 6,
+            tags: [
+                "Single Player",
+                {
+                    className: "coop",
+                    text: "Online Co-Op"
+                }, 
+                "FPS", 
+                "Open World"
+            ]
+        }, {
+            name: "Trailmakers",
+            rating: 8,
+            tags: [
+                "Single Player",
+                {
+                    className: "coop",
+                    text: "Online Co-Op"
+                }, 
+                "Construction", 
+                "Physics",
+                "Sandbox"
+            ]
+        }, {
+            name: "Cave Crawlers",
+            rating: 6,
+            tags: [
+                "Single Player",
+                {
+                    className: "coop",
+                    text: "Online Co-Op"
+                }, 
+                "Casual", 
+                "Combat"
+            ]
+        }, {
+            name: "Phasmophobia",
+            rating: 8,
+            tags: [
+                "Single Player",
+                {
+                    className: "coop",
+                    text: "Online Co-Op"
+                }, 
+                "Horror", 
+                "Puzzle"
+            ]
+        }, {
+            name: "Chained Together",
+            rating: 6,
+            tags: [
+                {
+                    className: "coop",
+                    text: "Online Co-Op"
+                }, 
+                "Platformer"
+            ]
+        }, {
+            name: "Barony",
+            rating: 7,
+            tags: [
+                {
+                    className: "coop",
+                    text: "Online Co-Op"
+                }, 
+                "Combat",
+                "Dungeon Crawler",
+            ]
+        }, {
+            name: "Melvor Idle",
+            rating: 7,
+            tags: [
+                "Single Player", 
+                "Idle"
+            ]
+        }, {
+            name: "Islands of Insights",
+            rating: 6,
+            tags: [
+                "Single Player",
+                "Platformer",
+                "Puzzle"
+            ]
+        }];
+
+        function showGames() {
+            const gamesContainer = document.createElement("div");
+            
+            const games = data.sort((a, b) => a.rating < b.rating ? 1 : b.rating < a.rating ? -1 : a.name > b.name ? 1 : b.name > a.name ? -1 : 0 );
+
+            games.forEach(game => {
+                console.log("game");
+                const container = document.createElement("div");
+                container.className = "Game";
+
+                const header = document.createElement("header");
+                header.className = "Game__header";
+                
+                const name = document.createElement("span");
+                name.className = "Game__name";
+                name.innerText = game.name;
+                header.appendChild(name);
+
+                const rating = document.createElement("span");
+                rating.className = "Game__rating";
+                rating.innerText = game.rating;
+                header.appendChild(rating);
+
+                container.appendChild(header);
+
+                const tags = document.createElement("ul");
+                tags.className = "Game__tags";
+
+                game.tags.forEach(tag => {
+                    const element = document.createElement("li");
+                    
+                    if (typeof tag === "string") {
+                        element.innerText = tag;
+                    } else {
+                        if (tag.className) {
+                            element.className = `Tag--${tag.className}`;
+                        }
+                        element.innerText = tag.text;
+                    }
+                    
+                    tags.appendChild(element);
+                });
+
+                container.appendChild(tags);
+                gamesContainer.appendChild(container);
+            })
+
+            document.getElementById("games").appendChild(gamesContainer);
+        };
+    </script>
+</head>
+<body onload="showGames()">
+    <main id="games">
+        <h1>Shit Games Pass &trade;</h1>
+
+        <div class="Game hide">
+            <header class="Game__header">
+                <span class="Game__name">GAME NAME</span>
+                <div class="Game__rating">GAME RATING</div>
+            </header>
+            
+            <ul class="Game__tags">
+                <li>GAME TAG 1</li>
+                <li>GAME TAG 2</li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>
