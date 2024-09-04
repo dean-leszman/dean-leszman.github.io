@@ -79,6 +79,11 @@ ul {
         background-color: mediumspringgreen;
         color: black;
     }
+
+    .Tag--vr {
+        background-color: forestgreen;
+        color: white;
+    }
 }
 
 
