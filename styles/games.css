@@ -2,6 +2,7 @@
 :root {
     --main-bg-color: orangered;
     --main-bg-color-text: white;
+    --border-radius: 3px;
 }
 
 ul {
@@ -16,19 +17,23 @@ ul {
 }
 
 .Game {
-    /* border: 1px solid var(--main-bg-color); */
     display: flex;
-    width: fit-content;
 
     + .Game {
-        margin-top: 0.2em;
+        margin-top: 2px;
+    }
+}
+
+.Game:nth-of-type(odd) {
+    .Game__tags {
+        background-color: rgba(255, 69, 0, 0.1); /* orangered @ 10% */
     }
 }
 
 .Game__header {
     align-items: stretch;
     background-color: var(--main-bg-color);
-    border-radius: 3px;
+    border-radius: var(--border-radius);
     color: var(--main-bg-color-text);
     display: flex;
     font-size: 1.2em;
@@ -39,7 +44,7 @@ ul {
 .Game__name {
     align-items: center;
     border: 1px solid var(--main-bg-color);
-    border-radius: 3px 0px 0px 3px;
+    border-radius: var(--border-radius);
     display: flex;
     padding: 0.4em 0.8em;
 }
@@ -48,7 +53,7 @@ ul {
     align-items: center;
     background-color: var(--dark);
     border: 1px solid var(--main-bg-color);
-    border-radius: 3px;
+    border-radius: var(--border-radius);
     color: var(--main-bg-color);
     display: flex;
     font-size: 2em;
@@ -59,13 +64,15 @@ ul {
 .Game__tags {
     align-items: center;
     display: flex;
+    border-radius: var(--border-radius);
+    flex-grow: 1;
     gap: 0.4em;
     padding: 0.4em 0.8em;
 
     li {
         background-color: #333;
         border: 1px solid #333;
-        border-radius: 3px;
+        border-radius: var(--border-radius);
         list-style-type: none;
         padding: 0.4em 0.8em;
         text-align: center;
@@ -87,8 +94,6 @@ ul {
         color: white;
     }
 }
-
-
 
 .hide {
     display: none;
