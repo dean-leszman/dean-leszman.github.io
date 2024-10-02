@@ -6,8 +6,8 @@
     --hover: orangered;
 
     
-    background-color: #111;
-    color: #EEE;
+    background-color: var(--dark);
+    color: var(--light);
     font-family: "Kode Mono";
 }
 
@@ -19,6 +19,22 @@
     height: 100vh;
     justify-content: center;
     width: 100vw;
+}
+
+.page-header {
+    align-items: center;
+    background-color: var(--dark);
+    display: flex;
+    gap: 2em;
+    justify-content: space-between;
+    padding: 1em;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+
+    h1 {
+        margin: 0px;
+    }
 }
 
 .links {
