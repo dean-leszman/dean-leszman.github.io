@@ -357,7 +357,6 @@
 
         function showGames(selectedTag) {
             const main = document.getElementById("games");
-            main.innerHTML = ''; // Reset page content
 
             const gamesContainer = document.createElement("div");
             
@@ -420,7 +419,7 @@
                 gamesContainer.appendChild(container);
             })
 
-            main.appendChild(gamesContainer);
+            main.replaceChildren(gamesContainer);
         };
 
         // Handle select onchange event
