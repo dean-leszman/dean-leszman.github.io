@@ -78,21 +78,26 @@ ul {
         text-align: center;
         width: 175px;
     }
+}
 
-    .Tag--coop {
-        background-color: mediumslateblue;
-        color: white;
-    }
-    
-    .Tag--free {
-        background-color: mediumspringgreen;
-        color: black;
-    }
+.Tag--coop {
+    background-color: mediumslateblue;
+    color: white;
+}
 
-    .Tag--vr {
-        background-color: forestgreen;
-        color: white;
-    }
+.Tag--free {
+    background-color: mediumspringgreen;
+    color: black;
+}
+
+.Tag--recommended {
+    background-color: gold;
+    color: black;
+}
+
+.Tag--vr {
+    background-color: forestgreen;
+    color: white;
 }
 
 .hide {
