@@ -8,6 +8,7 @@
     
     background-color: var(--dark);
     color: var(--light);
+    color-scheme: dark;
     font-family: "Kode Mono";
 }
 
@@ -49,17 +50,18 @@
         box-shadow: none;
         padding: 0em;
     }
+}
 
-    a,
-    button {
-        color:#EEE;
-        text-decoration: none;
+a,
+button,
+input {
+    color:#EEE;
+    text-decoration: none;
 
-        :hover {
-            color: var(--hover);
-            cursor: pointer;
-            transition: color 0.2s ease;
-        }
+    :hover {
+        color: var(--hover);
+        cursor: pointer;
+        transition: color 0.2s ease;
     }
 }
 
